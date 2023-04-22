@@ -24,7 +24,7 @@ async function seed(){
     )
     const author = await db.author.findFirst({
         where: {
-            firstName: " Uuuuu"
+            firstName: "Uuuuu"
         }
     })
 
@@ -36,12 +36,14 @@ async function seed(){
                     title,
                     isFiction,
                     datePublished,
-                    authorId: author.id
+                    authorId: author?.id
                 }
             })
         })
     )
 }
+
+seed()
 
 function getAuthors(): Array<Author>{
     return[
